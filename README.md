@@ -68,4 +68,7 @@ python -m http.server 8000
 
 ## Live site
 
-Hosted with GitHub Pages — see the repository's **Settings → Pages** for the URL.
+**https://seworm.github.io/PsychiatryMCQ/**
+
+Hosted with GitHub Pages straight from the `main` branch — every commit to `main`
+rebuilds the site automatically.

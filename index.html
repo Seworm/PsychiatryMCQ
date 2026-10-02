@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Psychiatry MCQ Bank</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">&#9679;</span>
+    <div>
+      <h1>Psychiatry MCQ Bank</h1>
+      <p class="sub">UHAS &middot; Interim Assessments I &amp; II, School of Medicine MCQs, General Psychiatry</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <div class="stat"><span id="scoreStat">0</span><small>correct</small></div>
+    <div class="stat"><span id="wrongStat">0</span><small>missed</small></div>
+    <div class="stat"><span id="accStat">&ndash;</span><small>accuracy</small></div>
+    <button class="btn ghost" id="themeBtn" title="Toggle theme">&#9788;</button>
+  </div>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress"><div class="bar" id="bar"></div></div>
+  <div class="progress-label"><span id="progressText">1 / 1</span></div>
+</div>
+
+<main id="main">
+
+  <!-- SETUP SCREEN -->
+  <section id="setup" class="screen">
+    <div class="card">
+      <h2>Choose a mode</h2>
+      <div class="modes" id="modeGrid"></div>
+      <div class="setup-row">
+        <label class="switch"><input type="checkbox" id="shuffleToggle"> Shuffle question order</label>
+        <label class="switch"><input type="checkbox" id="autoAdvToggle"> Auto-advance after answering</label>
+        <label class="switch"><input type="checkbox" id="mistakesOnlyToggle"> Retry missed questions only</label>
+      </div>
+      <div class="setup-actions">
+        <button class="btn ghost" id="clearProgress">Reset saved progress</button>
+        <button class="btn primary big" id="startBtn">Start</button>
+      </div>
+      <p class="hint">Keyboard: <kbd>1</kbd>&ndash;<kbd>5</kbd> select &middot; <kbd>Enter</kbd> next &middot; <kbd>Backspace</kbd> previous</p>
+    </div>
+  </section>
+
+  <!-- QUIZ SCREEN -->
+  <section id="quiz" class="screen hidden">
+    <div class="qmeta">
+      <span class="chip" id="secChip">Section</span>
+      <span class="chip ghost" id="numChip">Q1</span>
+    </div>
+
+    <div class="card">
+      <p class="stem" id="stem"></p>
+      <div class="options" id="options"></div>
+    </div>
+
+    <div class="card feedback hidden" id="feedback">
+      <div class="verdict" id="verdict"></div>
+      <div class="answer-line" id="answerLine"></div>
+      <div class="explain" id="explain"></div>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="btn ghost" id="prevBtn">&larr; Previous</button>
+      <div class="dotbar" id="dotbar"></div>
+      <button class="btn primary" id="nextBtn">Next &rarr;</button>
+    </div>
+  </section>
+
+  <!-- RESULTS SCREEN -->
+  <section id="results" class="screen hidden">
+    <div class="card center">
+      <h2 id="resultTitle">Session complete</h2>
+      <div class="bigscore" id="bigscore"></div>
+      <p class="hint" id="resultNote"></p>
+      <div class="breakdown" id="breakdown"></div>
+      <div class="setup-actions">
+        <button class="btn ghost" id="retryWrongBtn">Retry missed</button>
+        <button class="btn ghost" id="reviewBtn">Review all answers</button>
+        <button class="btn primary" id="finishBtn">Back to setup</button>
+      </div>
+    </div>
+    <div id="reviewList"></div>
+  </section>
+
+</main>
+
+<footer class="foot">Immediate feedback is shown the moment you choose an answer.</footer>
+
+<script src="data/section1.js"></script>
+<script src="data/section2.js"></script>
+<script src="data/section3a.js"></script>
+<script src="data/section3b.js"></script>
+<script src="data/section4.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
